@@ -49,7 +49,7 @@ export class HttpService {
     }
 
     get(url: string, options: RequestOptionsArgs = {params: new URLSearchParams()}): Observable<any> {
-        const _that = this;
+        // const _that = this;
         options.headers = this.createAuthorizationHeader(options.headers);
         if (options.params instanceof URLSearchParams) options.params.set('teamId', this.getCurrentTeamId());
         return this.http
@@ -65,7 +65,7 @@ export class HttpService {
     }
 
     getWithoutAppId(url: string, options: RequestOptionsArgs = {params: new URLSearchParams()}): Observable<any> {
-        const _that = this;
+        // const _that = this;
         options.headers = this.createAuthorizationHeader(options.headers);
         return this.http
             .get(this.config.apiEndPoint + url, options)
@@ -80,7 +80,7 @@ export class HttpService {
     }
 
     post(url: string, body: any = {}, options: RequestOptionsArgs = {}): Observable<any> {
-        const _that = this;
+        // const _that = this;
         options.headers = this.createAuthorizationHeader(options.headers);
         if (_.isUndefined(body.teamId)) body.teamId = this.getCurrentTeamId();
         return this.http
@@ -96,7 +96,7 @@ export class HttpService {
     }
 
     put(url: string, body: any = {}, options: RequestOptionsArgs = {}): Observable<any> {
-        const _that = this;
+        // const _that = this;
         options.headers = this.createAuthorizationHeader(options.headers);
         body.teamId = this.getCurrentTeamId();
         return this.http
@@ -112,7 +112,7 @@ export class HttpService {
     }
 
     delete(url: string, body: any = {}, options: RequestOptionsArgs = {}): Observable<any> {
-        const _that = this;
+        // const _that = this;
         options.headers = this.createAuthorizationHeader(options.headers);
         return this.http
             .delete(this.config.apiEndPoint + url + '?teamId=' + this.getCurrentTeamId(), options)

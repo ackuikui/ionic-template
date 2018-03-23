@@ -1,0 +1,59 @@
+<ion-content padding>
+
+    <common-logo></common-logo>
+
+    <form name="mainForm" #mainForm="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-label color="primary" floating>
+                    {{ 'auth.placeholder_email' | translate }}
+                </ion-label>
+
+                <ion-input color="light" [(ngModel)]="email" required #emailHandler="ngModel" type="text" name="email"
+                           class="form-control" email="true">
+                </ion-input>
+            </ion-item>
+            <div *ngIf="emailHandler.errors && (emailHandler.dirty || emailHandler.touched)"
+                 class="alert alert-danger">
+                <div>{{ (emailHandler.errors?.required ? 'auth.message.email_required' : 'auth.message.email_illegal') | translate }}</div>
+            </div>
+
+            <ion-item>
+                <ion-label color="primary" floating>
+                    {{ 'auth.placeholder_pwd' | translate }}
+                </ion-label>
+                <ion-input color="light" [(ngModel)]="password" minlength="6" required #passwordHandler="ngModel" type="password"
+                           name="password" class="form-control">
+                </ion-input>
+            </ion-item>
+            <div *ngIf="passwordHandler.errors && (passwordHandler.dirty || passwordHandler.touched)"
+                 class="alert alert-danger">
+                <div>{{ (passwordHandler.errors?.required ? 'auth.message.password_required' : 'auth.message.password_length_error') | translate }}</div>
+            </div>
+
+            <ion-item>
+                <ion-label color="primary" floating>
+                    {{'auth.confirm_password' | translate}}
+                </ion-label>
+                <ion-input color="light" [(ngModel)]="confirm_password" id="confirm_password" minlength="6" required #confirmPassword="ngModel"
+                           type="password" name="confirmPassword" class="form-control pd-4 mt-12" password="true" validateEqual = "passwordHandler">
+                </ion-input>
+            </ion-item>
+            <div *ngIf="(confirmPassword.errors || (confirm_password !== password)) && (confirmPassword.dirty || confirmPassword.touched)"
+                    class="alert alert-danger mb-0 pd-4">
+                <div>{{ 'auth.message.' + (confirmPassword.errors?.required ? 'password_required' :
+                    (confirmPassword.errors?.minlength ? 'password_length_error' : 'password_is_not_same')) | translate }}</div>
+            </div>
+
+        </ion-list>
+
+        <button round outline block [disabled]="!mainForm.form.valid || confirm_password !== password || signupLoading" (click)="signup()" ion-button>
+            {{'auth.sign_up' | translate}}
+        </button>
+
+        <button clear block ion-button color="light" (click)="goBack()">
+            {{'auth.message.has_account' | translate}}
+        </button>
+    </form>
+
+</ion-content>

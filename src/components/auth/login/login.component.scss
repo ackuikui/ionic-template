@@ -1,0 +1,33 @@
+login-component{
+  .scroll-content{
+    background: #183457;
+    overflow-y: hidden;
+  }
+  .item-ios{
+    background: transparent;
+  }
+  .list-ios > .item-block:first-child{
+    border-top: 0;
+  }
+  .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input{
+    color: #fff;
+  }
+  .item-ios{
+    padding-left: 1px;
+    .label-ios{
+      //margin-top: 0;
+    }
+  }
+
+  .rememberAccount{
+    display: flex;
+    align-items: center;
+    //margin: rem(40) 0;
+    .item-inner{
+      border-bottom: 0!important;
+    }
+    .checkbox-ios .checkbox-icon{
+      background-color: #183457;
+    }
+  }
+}

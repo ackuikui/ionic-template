@@ -1,0 +1,68 @@
+<ion-header no-border>
+
+    <ion-toolbar color="primary">
+        <ion-title>{{'team.team' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="onLogout()">{{ 'auth.logout' | translate }}</button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <div class="notice-header">{{'team.tips' | translate}}</div>
+
+    <!-- 团队列表 -->
+    <div class="borderRadius20" tappbal (click)="onEnter(row)" *ngFor="let row of rows">
+        <div class="left-area">
+            <img [src]="row.logoUrl" onerror="this.src = './assets/img/common/no-image-avatar.jpg'">
+            <div class="desc">
+                <div class="siyuan font-42">
+                  {{row.name}}
+                </div>
+                <div class="siyuan font-30" ion-text color="gray">{{row.code}}</div>
+            </div>
+        </div>
+        <div class="right-area">
+            <div class="siyuan job font-30" ion-text color="gray">
+                {{ row.employee.isOwner ? 'owner' : 'employee.employee' | translate}}
+                {{ row.employee.isOwner ? '' : (row.employee.status)}}
+                <!--<div *ngIf="row.employee.isOwner">owner</div>-->
+                <!--<div *ngIf="!row.employee.isOwner">{{'employee.employee' | translate}}({{row.employee.status}})</div>-->
+            </div>
+
+            <i class="font-30" ion-text color="gray" class="fa fa-angle-right"></i>
+        </div>
+
+    </div>
+
+    <!-- 团队消息 -->
+    <div *ngIf="invitations.length">
+        <div class="invitation-card" *ngFor="let invitation of invitations">
+            <div class="team-mess-head">
+                <img src="{{invitation.team.logoUrl}}">
+            </div>
+            <p class="siyuan font-30" ion-text color="gray">
+                {{'team.invitation_name' | translate}}:{{invitation.team.name}}
+            </p>
+            <p class="siyuan font-42" ion-text color="primary">
+                {{'team.code' | translate}}:{{invitation.team.code}}
+            </p>
+            <p class="siyuan font-30" ion-text color="gray">
+                {{'employee.job_title' | translate}}:{{invitation.jobTitle}}
+            </p>
+            <div class="team-mess-btn">
+                <button ion-button outline round block (click)="rejectInvitation(invitation)">
+                    {{'button.no' | translate}}
+                </button>
+                <div class="interval"></div>
+                <button ion-button outline round block (click)="approveInvitation(invitation)">
+                    {{'button.yes' | translate}}
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+

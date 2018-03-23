@@ -7,10 +7,10 @@ import {StatusBar} from "@ionic-native/status-bar";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {Toast} from "@ionic-native/toast";
 import {AppMinimize} from "@ionic-native/app-minimize";
-import {Observable} from "rxjs";
+// import {Observable} from "rxjs";
 
-declare var LocationPlugin;
-declare var AMapNavigation;
+// declare var LocationPlugin;
+// declare var AMapNavigation;
 
 @Injectable()
 export class NativeService {
