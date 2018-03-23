@@ -1,17 +1,17 @@
 import {NgModule} from "@angular/core";
-import {LoginComponent} from "./login.component";
+import {TabLeftComponent} from "./tableft.component";
 import {IonicPageModule} from "ionic-angular";
 
 @NgModule({
     declarations: [
-        LoginComponent
+      TabLeftComponent
     ],
     imports: [
 
-        IonicPageModule.forChild(LoginComponent)
+        IonicPageModule.forChild(TabLeftComponent)
     ],
     providers: [
     ]
 })
 
-export class LoginComponentModule { }
+export class TabLeftComponentModule { }

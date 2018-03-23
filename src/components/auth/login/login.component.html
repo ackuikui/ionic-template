@@ -1,57 +1,27 @@
 <ion-content padding>
 
-    <common-logo></common-logo>
 
     <form name="mainForm" #mainForm="ngForm">
-        <ion-list no-margin>
+        <ion-list margin>
             <ion-item>
                 <ion-label color="primary" floating>
-                    {{ 'auth.placeholder_email' | translate }}
+                    account:
                 </ion-label>
-                <ion-input color="light" [(ngModel)]="email" required #emailHandler="ngModel" type="text" name="email" email="true">
+                <ion-input color="light" [(ngModel)]="account" required #accountHandler="ngModel" type="text" name="account">
                 </ion-input>
             </ion-item>
-            <div *ngIf="emailHandler.errors && (emailHandler.dirty || emailHandler.touched)"
-                 class="alert alert-danger">
-                <div>{{ (emailHandler.errors?.required ? 'auth.message.email_required' : 'auth.message.email_incorrect') | translate }} </div>
-            </div>
-
             <ion-item>
                 <ion-label color="primary" floating>
-                    {{ 'auth.placeholder_pwd' | translate }}
+                    password:
                 </ion-label>
-                <ion-input color="light" [(ngModel)]="password" minlength="6" required #passwordHandler="ngModel" type="text"
-                        name="password" class="form-control" password="true" onfocus="this.type='password'"
-                ></ion-input>
+                  <ion-input color="light" [(ngModel)]="pwd" required #pwdHandler="ngModel" type="password" name="pwd">
+                </ion-input>
             </ion-item>
 
-            <div *ngIf="passwordHandler.errors && (passwordHandler.dirty || passwordHandler.touched)"
-                    class="alert alert-danger">
-                <div>{{ (passwordHandler.errors?.required ? 'auth.message.password_required' : 'auth.message.password_length_error') | translate }}</div>
-            </div>
         </ion-list>
 
-        <ion-item class="rememberAccount">
-            <ion-label color="white" class="font-42">{{ 'app.login.is_remember' | translate }}</ion-label>
-            <ion-checkbox id="rememberAccount" name="rememberAccount" [(ngModel)]="isRemember"></ion-checkbox>
-        </ion-item>
+      <button ion-button block round (click)="login(account, pwd)">submit</button>
 
-        <!--<div class="rememberAccount">-->
-            <!--<input type="checkbox" id="rememberAccount" name="rememberAccount" [(ngModel)]="isRemember">-->
-            <!--<span margin-left ion-text color="white">{{ 'app.login.is_remember' | translate }}</span>-->
-        <!--</div>-->
-
-
-
-        <button round block [disabled]="emailHandler.errors || passwordHandler.errors || loginLoading" (click)="login(email,password)" ion-button>
-            {{ 'auth.btn_login' | translate }}
-        </button>
-        <button class="font-42" clear block ion-button color="light" margin-top (click)="goSignup()">
-            {{'auth.message.signup_account' | translate}}
-        </button>
-        <!--<button clear block ion-button color="light" (click)="goForgetPassword()">-->
-            <!--{{'auth.forget_password' | translate}}-->
-        <!--</button>-->
     </form>
 
 </ion-content>
