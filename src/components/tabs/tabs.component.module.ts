@@ -1,24 +1,15 @@
 import {NgModule} from "@angular/core";
-import {TabsComponent} from "./tabs.component";
 import {IonicPageModule} from "ionic-angular";
-import {TabRightComponent} from "../tabright/tabright.component";
-import {TabCenterComponent} from "../tabcenter/tabcenter.component";
-import {TabLeftComponent} from "../tableft/tableft.component";
+
+import {TabsComponent} from "./tabs.component";
+
 
 @NgModule({
     declarations: [
-      TabsComponent
+      TabsComponent,
     ],
     imports: [
-
         IonicPageModule.forChild(TabsComponent)
-    ],
-    providers: [
-    ],
-    entryComponents: [
-      TabLeftComponent,
-      TabCenterComponent,
-      TabRightComponent
     ]
 })
 
