@@ -3,7 +3,8 @@ import {IonicPage, NavController} from "ionic-angular";
 
 
 @IonicPage({
-  name: 'login'
+  name: 'login',
+  priority: 'high'
 })
 @Component({
     selector: 'login-component',

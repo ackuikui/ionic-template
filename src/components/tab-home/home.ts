@@ -3,7 +3,8 @@ import {IonicPage} from "ionic-angular";
 
 
 @IonicPage({
-  name: 'home'
+  name: 'home',
+  priority: 'high'
 })
 @Component({
     templateUrl: './home.html'

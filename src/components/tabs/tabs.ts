@@ -3,7 +3,9 @@ import {IonicPage} from "ionic-angular";
 
 
 
-@IonicPage()
+@IonicPage({
+  priority: 'high'
+})
 @Component({
     templateUrl: './tabs.html'
 })
