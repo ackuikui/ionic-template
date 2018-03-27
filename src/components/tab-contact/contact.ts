@@ -2,17 +2,19 @@ import {Component, OnInit} from '@angular/core';
 import {IonicPage} from "ionic-angular";
 
 
-@IonicPage()
-@Component({
-    templateUrl: './tableft.component.html'
+@IonicPage({
+  name: 'contact'
 })
-export class TabLeftComponent implements OnInit {
+@Component({
+    templateUrl: './contact.html'
+})
+export class ContactComponent implements OnInit {
 
     constructor() {
     }
 
     ngOnInit() {
-      console.log('left init');
+      console.log('contact init');
     }
 
 

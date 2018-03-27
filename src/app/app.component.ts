@@ -23,7 +23,7 @@ export class MyApp {
   }
 
   async setRootPage(){
-    this.rootPage = 'LoginComponent';
+    this.rootPage = 'login';
   }
 
 }

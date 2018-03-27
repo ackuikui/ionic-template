@@ -2,10 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {IonicPage, NavController} from "ionic-angular";
 
 
-@IonicPage()
+@IonicPage({
+  name: 'login'
+})
 @Component({
     selector: 'login-component',
-    templateUrl: './login.component.html'
+    templateUrl: './login.html'
 })
 export class LoginComponent implements OnInit {
 
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit {
 
     async login(account, pwd) {
       console.log(account, pwd);
-      this.nav.push('TabsComponent');
+      this.nav.push('Tabs');
     }
 
 

@@ -1,17 +1,18 @@
 import {NgModule} from "@angular/core";
-import {TabLeftComponent} from "./tableft.component";
 import {IonicPageModule} from "ionic-angular";
+
+import {ContactComponent} from "./contact";
 
 @NgModule({
     declarations: [
-      TabLeftComponent
+      ContactComponent
     ],
     imports: [
 
-        IonicPageModule.forChild(TabLeftComponent)
+        IonicPageModule.forChild(ContactComponent)
     ],
     providers: [
     ]
 })
 
-export class TabLeftComponentModule { }
+export class ContactModule { }

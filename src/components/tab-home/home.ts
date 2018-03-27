@@ -2,17 +2,19 @@ import {Component, OnInit} from '@angular/core';
 import {IonicPage} from "ionic-angular";
 
 
-@IonicPage()
-@Component({
-    templateUrl: './tabright.component.html'
+@IonicPage({
+  name: 'home'
 })
-export class TabRightComponent implements OnInit {
+@Component({
+    templateUrl: './home.html'
+})
+export class HomeComponent implements OnInit {
 
     constructor() {
     }
 
     ngOnInit() {
-      console.log('right init');
+      console.log('home init');
     }
 
 

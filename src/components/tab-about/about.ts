@@ -2,17 +2,19 @@ import {Component, OnInit} from '@angular/core';
 import {IonicPage} from "ionic-angular";
 
 
-@IonicPage()
-@Component({
-    templateUrl: './tabcenter.component.html'
+@IonicPage({
+  name: 'about'
 })
-export class TabCenterComponent implements OnInit {
+@Component({
+    templateUrl: './about.html'
+})
+export class AboutComponent implements OnInit {
 
     constructor() {
     }
 
     ngOnInit() {
-      console.log('mid init');
+      console.log('about init');
     }
 
 
