@@ -13,10 +13,12 @@ import {IonicPage, NavController} from "ionic-angular";
 export class LoginComponent implements OnInit {
 
     constructor(public nav: NavController) {
+
     }
 
     ngOnInit() {
       console.log('init');
+
     }
 
 

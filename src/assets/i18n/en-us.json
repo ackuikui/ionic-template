@@ -1,7 +1,16 @@
 {
   "global": {
     "account": "account",
+    "password": "password",
     "profile": "profile",
     "setting": "setting"
+  },
+  "button": {
+    "submit": "Submit"
+  },
+  "tabs": {
+    "about": "About",
+    "home": "Home",
+    "contact": "Contact"
   }
 }

@@ -1,7 +1,16 @@
 {
   "global": {
     "account": "账户",
+    "password": "密码",
     "profile": "个人信息",
     "setting": "设置"
+  },
+  "button": {
+    "submit": "提交"
+  },
+  "tabs": {
+    "about": "关于",
+    "home": "首页",
+    "contact": "联系方式"
   }
 }

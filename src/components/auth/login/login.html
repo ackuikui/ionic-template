@@ -5,14 +5,14 @@
         <ion-list margin>
             <ion-item>
                 <ion-label color="primary" floating>
-                    account:
+                  {{ 'global.account' | translate }}:
                 </ion-label>
                 <ion-input color="light" [(ngModel)]="account" required #accountHandler="ngModel" type="text" name="account">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label color="primary" floating>
-                    password:
+                  {{ 'global.password' | translate }}:
                 </ion-label>
                   <ion-input color="light" [(ngModel)]="pwd" required #pwdHandler="ngModel" type="password" name="pwd">
                 </ion-input>
@@ -20,7 +20,9 @@
 
         </ion-list>
 
-      <button ion-button block round (click)="login(account, pwd)">submit</button>
+      <button ion-button block round (click)="login(account, pwd)">{{ 'button.submit' | translate }}</button>
+
+
 
     </form>
 
