@@ -1,4 +1,27 @@
-<ion-tabs selectedIndex="1">
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage('skin')">
+        skin
+      </button>
+      <button ion-item (click)="openPage('profile')">
+        profile
+      </button>
+      <button ion-item (click)="openPage('setting')">
+        setting
+      </button>
+      <button ion-item (click)="logout()">
+        Close Menu
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-tabs #content selectedIndex="1">
   <ion-tab [root]="tab1" [tabTitle]="title1" tabIcon="information-circle"></ion-tab>
   <ion-tab [root]="tab2" [tabTitle]="title2" tabIcon="home"></ion-tab>
   <ion-tab [root]="tab3" [tabTitle]="title3" tabIcon="contacts"></ion-tab>
