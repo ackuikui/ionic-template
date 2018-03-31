@@ -18,11 +18,7 @@
     "skin": "skin",
     "profile": "profile",
     "setting": "setting",
-    "logout": "logout"
-  },
-  "lang": {
-    "en-us": "English",
-    "zh-cn": "简体中文",
-    "zh-hk": "繁體中文"
+    "logout": "logout",
+    "language": "language"
   }
 }

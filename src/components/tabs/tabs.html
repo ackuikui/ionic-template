@@ -1,35 +1,48 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>{{'menu.menu' | translate}}</ion-title>
-    </ion-toolbar>
+    <ion-item>
+      <ion-avatar>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      </ion-avatar>
+      <h2>Cher</h2>
+      <p>Ugh. As if.</p>
+    </ion-item>
   </ion-header>
   <ion-content>
-    <ion-list>
-      <button ion-item (click)="openPage('skin')">
-        {{'menu.skin' | translate}}
+    <ion-list no-lines>
+      <button ion-item (click)="openPushPage('notification')">
+        {{'menu.notification' | translate}}(p)
       </button>
-      <button ion-item (click)="openPage('profile')">
-        {{'menu.profile' | translate}}
+      <button ion-item (click)="openPushPage('membership')">
+        {{'menu.membership' | translate}}(p)
       </button>
-      <button ion-item (click)="openPage('setting')">
-        {{'menu.setting' | translate}}
+      <button ion-item (click)="openModalPage('wallet')">
+        {{'menu.wallet' | translate}}
       </button>
-      <button ion-item (click)="logout()">
-        {{'menu.logout' | translate}}
+      <button ion-item (click)="openModalPage('favorite')">
+        {{'menu.favorite' | translate}}
+      </button>
+      <button ion-item (click)="openRootPage('setting')">
+        {{'menu.setting' | translate}}(r)
+      </button>
+      <button ion-item detail-none (click)="showLanguageSelect()">
+        {{'menu.language' | translate}}
       </button>
     </ion-list>
-    <ion-list>
-      <ion-item (click)="changeLanguage('en-us')">
-        <button ion-button clear>{{'lang.en-us' | translate}}</button>
-      </ion-item>
-      <ion-item (click)="changeLanguage('zh-cn')">
-        <button ion-button clear>{{'lang.zh-cn' | translate}}</button>
-      </ion-item>
-      <ion-item (click)="changeLanguage('zh-hk')">
-        <button ion-button clear>{{'lang.zh-hk' | translate}}</button>
-      </ion-item>
-    </ion-list>
+    <ion-footer>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button full clear (click)="openPage('skin')">
+            {{'menu.skin' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button full clear (click)="logout()">
+            {{'menu.logout' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
   </ion-content>
 </ion-menu>
 <ion-tabs #content selectedIndex="1">

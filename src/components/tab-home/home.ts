@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IonicPage} from "ionic-angular";
+import {IonicPage, NavController} from "ionic-angular";
 
 
 @IonicPage({
@@ -11,12 +11,15 @@ import {IonicPage} from "ionic-angular";
 })
 export class HomeComponent implements OnInit {
 
-    constructor() {
+    constructor(public navCtrl: NavController) {
     }
 
     ngOnInit() {
       console.log('home init');
     }
 
+  goPage() {
+      this.navCtrl.push('favorite')
+  }
 
 }
