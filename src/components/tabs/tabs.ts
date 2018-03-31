@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicPage} from "ionic-angular";
+import {TranslateService} from "@ngx-translate/core";
 
 
 
 @IonicPage({
+  name: 'tabs',
   priority: 'high'
 })
 @Component({
@@ -15,11 +17,7 @@ export class Tabs implements OnInit {
     tab2 = 'home';
     tab3 = 'contact';
 
-    title1 = 'About';
-    title2 = 'Home';
-    title3 = 'Contact';
-
-    constructor() {
+    constructor(public translate: TranslateService) {
 
     }
 
@@ -27,4 +25,13 @@ export class Tabs implements OnInit {
       console.log('tabs init');
     }
 
+
+  changeLanguage(lang) {
+    localStorage.setItem('language', lang);
+    this.translate.use(lang);
+  }
+
+  logout() {
+    localStorage.removeItem('authId');
+  }
 }

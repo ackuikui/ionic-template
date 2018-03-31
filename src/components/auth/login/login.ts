@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
 
     async login(account, pwd) {
       console.log(account, pwd);
-      this.nav.push('Tabs');
+      localStorage.setItem('authId', 'has_login');
+      this.nav.push('tabs');
     }
 
 

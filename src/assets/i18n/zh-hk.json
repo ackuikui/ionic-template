@@ -12,5 +12,17 @@
     "about": "關於",
     "home": "首頁",
     "contact": "聯繫方式"
+  },
+  "menu": {
+    "menu": "主菜單",
+    "skin": "皮膚",
+    "profile": "個人信息",
+    "setting": "個人設置",
+    "logout": "登出"
+  },
+  "lang": {
+    "en-us": "English",
+    "zh-cn": "简体中文",
+    "zh-hk": "繁體中文"
   }
 }

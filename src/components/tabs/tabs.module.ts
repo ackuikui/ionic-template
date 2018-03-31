@@ -2,6 +2,7 @@ import {NgModule} from "@angular/core";
 import {IonicPageModule} from "ionic-angular";
 
 import {Tabs} from "./tabs";
+import {SharedModule} from "../../common/shared/shared.module";
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import {Tabs} from "./tabs";
       Tabs,
     ],
     imports: [
-        IonicPageModule.forChild(Tabs)
+      SharedModule,
+      IonicPageModule.forChild(Tabs)
     ]
 })
 

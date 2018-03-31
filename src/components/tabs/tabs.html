@@ -1,28 +1,39 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>{{'menu.menu' | translate}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
       <button ion-item (click)="openPage('skin')">
-        skin
+        {{'menu.skin' | translate}}
       </button>
       <button ion-item (click)="openPage('profile')">
-        profile
+        {{'menu.profile' | translate}}
       </button>
       <button ion-item (click)="openPage('setting')">
-        setting
+        {{'menu.setting' | translate}}
       </button>
       <button ion-item (click)="logout()">
-        Close Menu
+        {{'menu.logout' | translate}}
       </button>
+    </ion-list>
+    <ion-list>
+      <ion-item (click)="changeLanguage('en-us')">
+        <button ion-button clear>{{'lang.en-us' | translate}}</button>
+      </ion-item>
+      <ion-item (click)="changeLanguage('zh-cn')">
+        <button ion-button clear>{{'lang.zh-cn' | translate}}</button>
+      </ion-item>
+      <ion-item (click)="changeLanguage('zh-hk')">
+        <button ion-button clear>{{'lang.zh-hk' | translate}}</button>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
 <ion-tabs #content selectedIndex="1">
-  <ion-tab [root]="tab1" [tabTitle]="title1" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab2" [tabTitle]="title2" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab3" [tabTitle]="title3" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab1" [tabTitle]="'tabs.about' | translate" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="tab2" [tabTitle]="'tabs.home' | translate" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab3" [tabTitle]="'tabs.contact' | translate" tabIcon="contacts"></ion-tab>
 </ion-tabs>

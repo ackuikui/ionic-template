@@ -18,8 +18,8 @@ export class MyApp implements OnInit{
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      // statusBar.styleDefault();
-      // splashScreen.hide();
+      statusBar.styleDefault();
+      splashScreen.hide();
 
       translate.setDefaultLang('en-us');
 
@@ -33,7 +33,7 @@ export class MyApp implements OnInit{
   }
 
   async setRootPage(){
-    this.rootPage = 'login';
+    this.rootPage = localStorage.getItem('authId') ? 'tabs' : 'login';
   }
 
   setLanguage(lang: string): void{
