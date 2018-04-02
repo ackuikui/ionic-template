@@ -1,6 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AlertController, App, IonicPage, MenuController, ModalController, NavController} from "ionic-angular";
+import {
+  AlertController, App, IonicPage, MenuController, ModalController, NavController,
+  ViewController
+} from "ionic-angular";
 import {TranslateService} from "@ngx-translate/core";
+import {Observable} from "rxjs";
 
 
 
@@ -24,14 +28,28 @@ export class Tabs implements OnInit {
                 public menuCtrl: MenuController,
                 public alertCtrl: AlertController,
                 public modalCtrl: ModalController,
+                public viewCtrl: ViewController,
                 public app: App) {
 
     }
 
     ngOnInit() {
       this.language = localStorage.getItem('language');
+
       console.log('tabs init');
+      let subscription = this.viewCtrl.willEnter.subscribe( () => {
+        // do my stuff here
+        console.log('will enter'); // nav pop,tabs view not load again, but
+      });
     }
+
+
+  ionViewDidLoad() {
+    console.log("I'm alive!");
+  }
+  ionViewWillLeave() {
+    console.log("Looks like I'm about to leave :(");
+  }
 
   showLanguageSelect() {
     let alert = this.alertCtrl.create({
@@ -96,6 +114,10 @@ export class Tabs implements OnInit {
     this.translate.use(lang);
   }
 
+  selectSkin() {
+    console.log(this.viewCtrl.pageRef());
+    this.viewCtrl.pageRef().nativeElement.className = 'ion-page show-page dark';
+  }
   logout() {
     localStorage.removeItem('authId');
     // this.navCtrl.popToRoot();//抖动

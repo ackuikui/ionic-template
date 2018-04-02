@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {App, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the SettingPage page.
@@ -17,7 +17,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public app: App,
+              public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -25,7 +27,9 @@ export class SettingPage {
   }
 
   goBack() {
-    this.navCtrl.canGoBack();
+    // this.navCtrl.push('tabs');
+    const nav = this.app.getRootNavs();
+    nav[0].setRoot('tabs');
   }
 
 }

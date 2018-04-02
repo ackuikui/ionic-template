@@ -16,6 +16,10 @@
   "menu": {
     "menu": "menu",
     "skin": "skin",
+    "notification": "notification",
+    "membership": "membership",
+    "wallet": "wallet",
+    "favorite": "favorite",
     "profile": "profile",
     "setting": "setting",
     "logout": "logout",

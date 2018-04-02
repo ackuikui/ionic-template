@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     }
 
   goPage() {
-      this.navCtrl.push('favorite')
+      this.navCtrl.push('membership')
   }
 
 }

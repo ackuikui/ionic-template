@@ -16,6 +16,10 @@
   "menu": {
     "menu": "主菜單",
     "skin": "皮膚",
+    "notification": "通知",
+    "membership": "好友",
+    "wallet": "錢寶",
+    "favorite": "收藏",
     "profile": "個人信息",
     "setting": "個人設置",
     "logout": "登出",
