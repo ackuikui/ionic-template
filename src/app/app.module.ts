@@ -8,6 +8,9 @@ import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate
 import { MyApp } from './app.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {Network} from "@ionic-native/network";
+import {NetworkInterface} from "@ionic-native/network-interface";
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 // configure a custom TranslateLoader while using AoT compilation or Ionic
 export function createTranslateLoader(http: HttpClient) {
@@ -40,6 +43,9 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     TranslateService,
     StatusBar,
+    Network,
+    AndroidPermissions,
+    NetworkInterface,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

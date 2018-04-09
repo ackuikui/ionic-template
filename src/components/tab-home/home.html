@@ -10,4 +10,40 @@
 <ion-content>
   {{ 'tabs.home' | translate }}
   <button ion-button (click)="goPage()">push detail page</button>
+
+
+
+  <ion-list>
+    <ion-item>log: {{log}}</ion-item>
+    <ion-item>ssid: {{netInfo.SSID}}</ion-item>
+    <ion-item>mac: {{netInfo.BSSID}}</ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let i of netInfo.connectList">{{i}}</ion-item>
+  </ion-list>
+
+  <button ion-button (click)="scan()">scan wifi</button>
+  <ion-list *ngFor="let i of netInfo.wifiList">
+    <ion-item>ssid: {{i.SSID}}</ion-item>
+    <ion-item>mac: {{i.BSSID}}</ion-item>
+    <ion-item>level: {{i.level}}</ion-item>
+    <ion-item>frequency: {{i.frequency}}</ion-item>
+    <ion-item>channelWith: {{i.channelWith}}</ion-item>
+    <ion-item>capabilities: {{i.capabilities}}</ion-item>
+  </ion-list>
+
+  <!--<ion-list [virtualScroll]="Items">-->
+    <!--<ion-item *virtualItem="let item">item</ion-item>-->
+  <!--</ion-list>-->
+  <ion-list [virtualScroll]="InfiniteItems" [headerFn]="myHeaderFn">
+    <ion-item-divider *virtualHeader="let header">
+      Header: {{ header }}
+    </ion-item-divider>
+    <ion-item *virtualItem="let item">
+      Item: {{ item }}
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
